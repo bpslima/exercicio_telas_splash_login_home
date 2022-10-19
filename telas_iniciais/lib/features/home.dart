@@ -35,9 +35,10 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
           ),
-          const SizedBox(height: 60),
-          Expanded(
-              child: Row(children: [
+          const SizedBox(height: 10),
+          //Opções:
+
+          Row(children: [
             const SizedBox(width: 15),
             Container(
                 alignment: Alignment.center,
@@ -52,8 +53,8 @@ class _HomePageState extends State<HomePage> {
                   Expanded(
                       child: Image.asset(
                     pix,
-                    height: (MediaQuery.of(context).size.height / 7) / 3,
-                    width: (MediaQuery.of(context).size.width / 3.5) / 7.6,
+                    height: (MediaQuery.of(context).size.height / 3),
+                    width: (MediaQuery.of(context).size.width / 7),
                     color: const Color(0xff7e7d7d),
                   )),
                   const Text(
@@ -75,8 +76,9 @@ class _HomePageState extends State<HomePage> {
                   Expanded(
                       child: Image.asset(
                     barcode,
-                    height: (MediaQuery.of(context).size.height / 7) / 3,
-                    width: (MediaQuery.of(context).size.width / 3.5) / 7.6,
+                    scale: 0.5,
+                    height: MediaQuery.of(context).size.height / 3,
+                    width: MediaQuery.of(context).size.width / 7,
                     color: const Color(0xff7e7d7d),
                   )),
                   const Text(
@@ -98,8 +100,8 @@ class _HomePageState extends State<HomePage> {
                   Expanded(
                       child: Image.asset(
                     extrato,
-                    height: (MediaQuery.of(context).size.height / 7) / 3,
-                    width: (MediaQuery.of(context).size.width / 3.5) / 7.6,
+                    height: (MediaQuery.of(context).size.height / 3),
+                    width: (MediaQuery.of(context).size.width / 7),
                     color: const Color(0xff7e7d7d),
                   )),
                   const Text(
@@ -110,37 +112,38 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(
               height: 8,
             )
-          ])),
-          Expanded(
-              child: Column(
-            children: [
-              const SizedBox(width: 15),
-              Center(
-                child: Container(
-                    height: MediaQuery.of(context).size.height / 2.5,
-                    width: MediaQuery.of(context).size.width / 1.75,
-                    padding: const EdgeInsets.all(15),
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border:
-                          Border.all(color: const Color(0xfff2cdd3), width: 3),
+          ]),
+
+          const SizedBox(height: 15),
+          Row(children: [
+            Container(
+              alignment: Alignment.center,
+              height: MediaQuery.of(context).size.height / 3,
+              width: MediaQuery.of(context).size.width,
+              padding: const EdgeInsets.all(15),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                border: Border.all(color: const Color(0xfff2cdd3), width: 3),
+              ),
+              child: Column(children: [
+                Expanded(
+                    child: Image.asset(
+                  piggy,
+                  height: (MediaQuery.of(context).size.height / 4) / 1.4,
+                  width: (MediaQuery.of(context).size.width / 4) / 1.4,
+                )),
+                Wrap(direction: Axis.vertical, children: const [
+                  Expanded(
+                    child: Text(
+                      'Porkin.ios',
+                      style:
+                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                     ),
-                    child: Column(children: [
-                      Expanded(
-                          child: Image.asset(
-                        piggy,
-                        height: (MediaQuery.of(context).size.height / 2.5) / 3,
-                        width: (MediaQuery.of(context).size.width / 1.75) / 7.6,
-                      )),
-                      const Text(
-                        'Meus Porkin.ios',
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.bold),
-                      ),
-                    ])),
-              )
-            ],
-          )),
+                  ),
+                ]),
+              ]),
+            )
+          ]),
         ]),
         bottomNavigationBar: const SizedBox(
           height: 70,
